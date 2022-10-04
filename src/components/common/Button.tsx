@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./button.scss";
+import "./_button.scss";
 
 interface IButton {
   type?: "submit" | "button";

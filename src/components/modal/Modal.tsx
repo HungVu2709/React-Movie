@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import "./modal.scss";
+import "./_modal.scss";
 
 interface IProps {
   active: boolean;

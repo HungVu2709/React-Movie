@@ -1,7 +1,8 @@
 import { AxiosResponse } from "axios";
-import { getMoviesListRequest } from "../interfaces/movie";
 import apiConfig from "./apiConfig";
 import axiosClient from "./axiosClient";
+import { getMoviesListRequest, getVideosRequest } from "../interfaces/movie";
+
 interface ICategory {
   movie: string;
   tv: string;
@@ -43,7 +44,7 @@ const tmdbApi = {
     const url = "tv/" + tvType[type as keyof ITvType];
     return axiosClient.get(url, params);
   },
-  getVideos: (cate: string, id: string) => {
+  getVideos: (cate: string, id: string): Promise<getVideosRequest> => {
     const url = category[cate as keyof ICategory] + "/" + id + "/videos";
     return axiosClient.get(url, { params: {} });
   },
