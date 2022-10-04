@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import queryString from "query-string";
 
 import apiConfig from "./apiConfig";
@@ -12,10 +12,12 @@ const axiosClient = axios.create({
     queryString.stringify({ ...params, api_key: apiConfig.apiKey }),
 });
 
-axiosClient.interceptors.request.use(async (config) => config);
+axiosClient.interceptors.request.use(
+  async (config: AxiosRequestConfig) => config
+);
 
 axiosClient.interceptors.response.use(
-  (response) => {
+  (response: AxiosResponse) => {
     if (response && response.data) {
       return response.data;
     }
