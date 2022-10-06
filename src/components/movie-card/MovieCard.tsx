@@ -8,8 +8,9 @@ import Button from "../common/Button";
 
 import { category, ICategory } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
+import { getMoviesListRequest, MovieListResult } from "../../interfaces/movie";
 
-const MovieCard = (props: { category: string; item: any }) => {
+const MovieCard = (props: { category: string; item: MovieListResult }) => {
   const item = props.item;
 
   const link =

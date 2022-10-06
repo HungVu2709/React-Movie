@@ -13,9 +13,9 @@ import MovieCard from "../movie-card/MovieCard";
 interface IProps {
   category: string;
   type: string;
-  id: number;
+  id?: number;
 }
-const MovieList = (props: any) => {
+const MovieList = (props: IProps) => {
   const [items, setItems] = useState<any>([]);
 
   useEffect(() => {

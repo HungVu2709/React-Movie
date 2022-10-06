@@ -1,17 +1,20 @@
-import { useRoutes } from "react-router-dom";
-import MainLayout from "../components/layout/MainLayout";
+import React from "react";
 
-import { mainRoute } from "./mainRoute";
+import { Route, Routes } from "react-router-dom";
 
-export const routeConfig = [
-  {
-    element: <MainLayout />,
-    children: mainRoute,
-  },
-];
+import Home from "../pages/Home";
+import Catalog from "../pages/Catalog";
+import Detail from "../pages/detail/Detail";
 
-const RouterManager = () => {
-  return useRoutes(routeConfig);
+const RoutesConfig = () => {
+  return (
+    <Routes>
+      <Route path="/:category/search/:keyword" element={<Catalog />} />
+      <Route path="/:category/:id" element={<Detail />} />
+      <Route path="/:category" element={<Catalog />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 };
 
-export default RouterManager;
+export default RoutesConfig;

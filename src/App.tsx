@@ -1,20 +1,28 @@
 import { createBrowserHistory } from "history";
-import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  unstable_HistoryRouter as HistoryRouter,
+} from "react-router-dom";
 
 import "./App.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
-import RouterManager from "./routes/Routes";
 
-export const history = createBrowserHistory();
+import RoutesConfig from "./routes/Routes";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
-const App = () => {
+function App() {
   return (
-    <HistoryRouter history={history}>
-      <RouterManager />
-    </HistoryRouter>
+    <>
+      <Header />
+      <RoutesConfig />
+      <Footer />
+    </>
   );
-};
+}
+
 export default App;

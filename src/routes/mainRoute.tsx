@@ -13,7 +13,7 @@ export const mainRoute = [
     element: <Catalog />,
   },
   {
-    path: "/:category/:id",
+    path: "/:movie",
     element: <Catalog />,
   },
   {
