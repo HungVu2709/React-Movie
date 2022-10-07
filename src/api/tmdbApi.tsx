@@ -1,7 +1,11 @@
 import { AxiosResponse } from "axios";
 import apiConfig from "./apiConfig";
 import axiosClient from "./axiosClient";
-import { getMoviesListRequest, getVideosRequest } from "../interfaces/movie";
+import {
+  getMoviesListRequest,
+  getVideosRequest,
+  MovieCredit,
+} from "../interfaces/movie";
 
 export interface ICategory {
   movie: string;
@@ -59,7 +63,7 @@ const tmdbApi = {
     const url = category[cate as keyof ICategory] + "/" + id;
     return axiosClient.get(url, params);
   },
-  credits: (cate: string, id: string) => {
+  credits: (cate: string, id: string): Promise<MovieCredit> => {
     const url = category[cate as keyof ICategory] + "/" + id + "/credits";
     return axiosClient.get(url, { params: {} });
   },

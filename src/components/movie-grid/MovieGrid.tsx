@@ -102,6 +102,7 @@ const MovieSearch = (props: { category: string; keyword: string | number }) => {
   const [keyword, setKeyword] = useState<string | number>(
     props.keyword ? props.keyword : ""
   );
+
   const goToSearch = useCallback(() => {
     if (keyword.toString().trim().length > 0) {
       navigate(
