@@ -7,6 +7,7 @@ import apiConfig from "../../api/apiConfig";
 import tmdbApi from "../../api/tmdbApi";
 import MovieList from "../../components/movie-list/MovieList";
 import CastList from "./CastList";
+import VideoList from "./VideoList";
 
 type IParams = {
   id: string;
@@ -77,7 +78,7 @@ const Detail = () => {
 
           <div className="container">
             <div className="section mb-3">
-              {/* <VideoList id={item.id} /> */}
+              <VideoList id={item.id} />
             </div>
             <div className="section mb-3">
               <div className="section__header mb-2">
