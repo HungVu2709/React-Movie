@@ -8,7 +8,6 @@ import { category as cate } from "../api/tmdbApi";
 
 const Catalog = () => {
   const { category } = useParams();
-  console.log(category);
 
   return (
     <>
