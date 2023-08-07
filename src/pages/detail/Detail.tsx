@@ -16,7 +16,6 @@ type IParams = {
 
 const Detail = () => {
   const { category, id } = useParams<IParams>();
-  console.log(category, id);
 
   const [item, setItem] = useState<any>();
 
